@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_142450) do
+ActiveRecord::Schema.define(version: 2019_12_10_144245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,4 +23,16 @@ ActiveRecord::Schema.define(version: 2019_12_10_142450) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "books_sheets", force: :cascade do |t|
+    t.string "sheet_name"
+    t.bigint "plus_effect_id", null: false
+    t.bigint "minus_effect_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["minus_effect_id"], name: "index_books_sheets_on_minus_effect_id"
+    t.index ["plus_effect_id"], name: "index_books_sheets_on_plus_effect_id"
+  end
+
+  add_foreign_key "books_sheets", "books_categories", column: "minus_effect_id"
+  add_foreign_key "books_sheets", "books_categories", column: "plus_effect_id"
 end
