@@ -1,5 +1,5 @@
-module Calulation
+module Books
   def self.table_name_prefix
-    'calulation_'
+    'books_'
   end
 end

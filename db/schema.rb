@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_135233) do
+ActiveRecord::Schema.define(version: 2019_12_10_142450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "calulation_categories", force: :cascade do |t|
+  create_table "books_categories", force: :cascade do |t|
     t.string "category_name"
+    t.string "category_effect"
+    t.string "category_effect_enum"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
