@@ -8,6 +8,8 @@ class CreateBooksSheets < ActiveRecord::Migration[6.0]
       # t.references :minus_effect, null: false, foreign_key: true
 
       t.timestamps
+      
+      t.index [:sheet_name],  unique: true
 
       t.foreign_key :books_categories, column: :plus_effect_id,  index: true
       t.foreign_key :books_categories, column: :minus_effect_id, index: true
