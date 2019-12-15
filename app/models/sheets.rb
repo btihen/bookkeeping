@@ -1,5 +1,5 @@
-module Books
+module Sheets
   def self.table_name_prefix
-    'books_'
+    'sheets_'
   end
 end

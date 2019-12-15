@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sheets Sub Statements</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lang key</th>
+      <th>Sheet statement</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sheets_sub_statements.each do |sheets_sub_statement| %>
+      <tr>
+        <td><%= sheets_sub_statement.lang_key %></td>
+        <td><%= sheets_sub_statement.sheet_statement_id %></td>
+        <td><%= link_to 'Show', sheets_sub_statement %></td>
+        <td><%= link_to 'Edit', edit_sheets_sub_statement_path(sheets_sub_statement) %></td>
+        <td><%= link_to 'Destroy', sheets_sub_statement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sheets Sub Statement', new_sheets_sub_statement_path %>

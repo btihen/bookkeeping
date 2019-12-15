@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sheets Statement Klasses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lang key</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sheets_statement_klasses.each do |sheets_statement_klass| %>
+      <tr>
+        <td><%= sheets_statement_klass.lang_key %></td>
+        <td><%= link_to 'Show', sheets_statement_klass %></td>
+        <td><%= link_to 'Edit', edit_sheets_statement_klass_path(sheets_statement_klass) %></td>
+        <td><%= link_to 'Destroy', sheets_statement_klass, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sheets Statement Klass', new_sheets_statement_klass_path %>

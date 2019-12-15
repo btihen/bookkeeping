@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lang key:</strong>
+  <%= @sheets_statement.lang_key %>
+</p>
+
+<p>
+  <strong>Increase klass:</strong>
+  <%= @sheets_statement.increase_klass_id %>
+</p>
+
+<p>
+  <strong>Decrease klass:</strong>
+  <%= @sheets_statement.decrease_klass_id %>
+</p>
+
+<%= link_to 'Edit', edit_sheets_statement_path(@sheets_statement) %> |
+<%= link_to 'Back', sheets_statements_path %>

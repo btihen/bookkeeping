@@ -1,0 +1,2 @@
+module Sheets::StatementKlassesHelper
+end

@@ -31,6 +31,16 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  # form me
+  gem 'pry-rails'
+  gem 'pry-byebug'
+
+  gem 'factory_bot_rails'
+  gem 'faker'
+
+  gem 'rspec-rails'
+  # rails generate rspec:install
 end
 
 group :development do
@@ -40,6 +50,28 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # code coverage
+  gem 'simplecov'
+  gem 'simplecov-console'
+
+  # easier tests (inside rspec)
+  gem 'shoulda-matchers' # , '~> 3.1'
+
+  # FEATURE TESTS with rspec
+  gem 'capybara'
+
+  # cucumber can test emails (rspec too?)
+  gem 'email_spec'
+
+  # allow cucumber to do JavaScript testing too
+  gem 'selenium-webdriver'
+  # https://mikecoutermarsh.com/rails-capybara-selenium-chrome-driver-setup/
+  # download chromedriver from: http://chromedriver.chromium.org/
+  # or use brew cask install chromedriver
+  # finally in features/env.rb - switch the browser to :chrome
+  # gem 'chromedriver-helper'
+  gem 'webdrivers' # , '~> 3.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -1,0 +1,32 @@
+<%= form_with(model: sheets_statement, local: true) do |form| %>
+  <% if sheets_statement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sheets_statement.errors.count, "error") %> prohibited this sheets_statement from being saved:</h2>
+
+      <ul>
+        <% sheets_statement.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :lang_key %>
+    <%= form.text_field :lang_key %>
+  </div>
+
+  <div class="field">
+    <%= form.label :increase_klass_id %>
+    <%= form.text_field :increase_klass_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :decrease_klass_id %>
+    <%= form.text_field :decrease_klass_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

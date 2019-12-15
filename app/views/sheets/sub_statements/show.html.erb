@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lang key:</strong>
+  <%= @sheets_sub_statement.lang_key %>
+</p>
+
+<p>
+  <strong>Sheet statement:</strong>
+  <%= @sheets_sub_statement.sheet_statement_id %>
+</p>
+
+<%= link_to 'Edit', edit_sheets_sub_statement_path(@sheets_sub_statement) %> |
+<%= link_to 'Back', sheets_sub_statements_path %>
