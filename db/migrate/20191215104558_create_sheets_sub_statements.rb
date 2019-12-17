@@ -1,8 +1,10 @@
 class CreateSheetsSubStatements < ActiveRecord::Migration[6.0]
   def change
     create_table :sheets_sub_statements do |t|
-      t.string :lang_key
-      # t.references :sheet_statement, null: false, foreign_key: true
+      t.string :lang_key,   null: false
+      t.string :s_sub_num, null: false
+      t.string :s_sub_description
+
       t.belongs_to :sheet_statement,  null: false, class_name: 'Sheets::Statement'
 
       t.timestamps

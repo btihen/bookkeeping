@@ -42,13 +42,19 @@ ActiveRecord::Schema.define(version: 2019_12_15_104558) do
   end
 
   create_table "sheets_statement_klasses", force: :cascade do |t|
-    t.string "lang_key"
+    t.string "lang_key", null: false
+    t.string "s_klass_num", null: false
+    t.string "s_klass_description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["lang_key"], name: "index_sheets_statement_klasses_on_lang_key", unique: true
+    t.index ["s_klass_num"], name: "index_sheets_statement_klasses_on_s_klass_num", unique: true
   end
 
   create_table "sheets_statements", force: :cascade do |t|
-    t.string "lang_key"
+    t.string "lang_key", null: false
+    t.string "s_state_num", null: false
+    t.string "s_state_description"
     t.bigint "increase_klass_id", null: false
     t.bigint "decrease_klass_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -56,10 +62,13 @@ ActiveRecord::Schema.define(version: 2019_12_15_104558) do
     t.index ["decrease_klass_id"], name: "index_sheets_statements_on_decrease_klass_id"
     t.index ["increase_klass_id"], name: "index_sheets_statements_on_increase_klass_id"
     t.index ["lang_key"], name: "index_sheets_statements_on_lang_key", unique: true
+    t.index ["s_state_num"], name: "index_sheets_statements_on_s_state_num", unique: true
   end
 
   create_table "sheets_sub_statements", force: :cascade do |t|
-    t.string "lang_key"
+    t.string "lang_key", null: false
+    t.string "s_sub_num", null: false
+    t.string "s_sub_description"
     t.bigint "sheet_statement_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
