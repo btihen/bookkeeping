@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lang key:</strong>
+  <%= @chart_account.lang_key %>
+</p>
+
+<p>
+  <strong>Account sub group:</strong>
+  <%= @chart_account.account_sub_group_id %>
+</p>
+
+<p>
+  <strong>Sub statement:</strong>
+  <%= @chart_account.sub_statement_id %>
+</p>
+
+<%= link_to 'Edit', edit_chart_account_path(@chart_account) %> |
+<%= link_to 'Back', chart_accounts_path %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Chart Accounts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lang key</th>
+      <th>Account sub group</th>
+      <th>Sub statement</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chart_accounts.each do |chart_account| %>
+      <tr>
+        <td><%= chart_account.lang_key %></td>
+        <td><%= chart_account.account_sub_group_id %></td>
+        <td><%= chart_account.sub_statement_id %></td>
+        <td><%= link_to 'Show', chart_account %></td>
+        <td><%= link_to 'Edit', edit_chart_account_path(chart_account) %></td>
+        <td><%= link_to 'Destroy', chart_account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Chart Account', new_chart_account_path %>
